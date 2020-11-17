@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:service_manager/utilites/constants.dart';
 import 'package:service_manager/widgets/common_appbar.dart';
+import 'package:service_manager/widgets/train_details_container.dart';
 
 class SearchResult extends StatefulWidget {
   static const String id = "search_result";
@@ -12,6 +13,7 @@ class SearchResult extends StatefulWidget {
 
 class _SearchResultState extends State<SearchResult> {
   kSearchOptions _selectedOption = kSearchOptions.set_number;
+  String searchText = "";
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class _SearchResultState extends State<SearchResult> {
             CommonAppBar(),
             Expanded(
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                padding: EdgeInsets.symmetric(horizontal: 7.5),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
@@ -67,12 +69,189 @@ class _SearchResultState extends State<SearchResult> {
                         ),
                       ],
                     ),
-                    Container(
-                      color: Colors.red,
-                      child: SizedBox.fromSize(
-                        size: Size.square(100.0),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 35.0,
+                        vertical: 8.0,
                       ),
-                    )
+                      child: TextField(
+                        keyboardType: TextInputType.number,
+                        textAlign: TextAlign.center,
+                        textInputAction: TextInputAction.done,
+                        onChanged: (value) {
+                          searchText = value;
+                        },
+                        decoration: InputDecoration(
+                          hintText: 'Enter the respective number',
+                          contentPadding: EdgeInsets.symmetric(
+                              vertical: 10.0, horizontal: 20.0),
+                          border: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(32.0)),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color(0x70011627), width: 1.0),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(32.0)),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color(0x70011627), width: 2.0),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(32.0)),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(5.0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(17.5)),
+                        color: Color(0x3B505FE1),
+                      ),
+                      child: Column(
+                        children: <Widget>[
+                          Row(
+                            children: <Widget>[
+                              TrainDetailsContainer(),
+                              SizedBox(
+                                width: 5.0,
+                              ),
+                              Expanded(
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  padding: EdgeInsets.all(5.0),
+                                  decoration: BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(17.5)),
+                                    color: Color(0x99FDFFFC),
+                                  ),
+                                  child: Text(
+                                    "232",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 7.5,
+                          ),
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 3.0,
+                              vertical: 5.0,
+                            ),
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(9.5)),
+                              color: Color(0x99FDFFFC),
+                            ),
+                            child: Table(
+                              border: TableBorder(
+                                verticalInside: BorderSide(
+                                  color: Color(0xFF505FE1),
+                                  width: 2.0,
+                                  style: BorderStyle.solid,
+                                ),
+                              ),
+                              children: [
+                                TableRow(
+                                  children: [
+                                    Text(
+                                      "TRAIN NO",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Text(
+                                      "START",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Text(
+                                      "CHANGE",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                TableRow(
+                                  children: [
+                                    Text("S 90001"),
+                                    Text("KYN\n13:56"),
+                                    Text("CSMT\n15:24"),
+                                  ],
+                                ),
+                                TableRow(
+                                  children: [
+                                    Text("F 90002"),
+                                    Text("CSMT\n13:41"),
+                                    Text("ASO\n19:23"),
+                                  ],
+                                ),
+                                TableRow(
+                                  children: [
+                                    Text("S 90001"),
+                                    Text("ASO\n19:43"),
+                                    Text("KYN\n20:20"),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10.0,
+                          ),
+                          Row(
+                            children: <Widget>[
+                              Expanded(
+                                flex: 1,
+                                child: FlatButton(
+                                  onPressed: () => {},
+                                  child: Container(
+                                    width: double.maxFinite,
+                                    height: 48.0,
+                                    alignment: Alignment.center,
+                                    color: Color(0xFF8FB339),
+                                    child: Text(
+                                      'Add to Roaster',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 17.0,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: FlatButton(
+                                  onPressed: () => {},
+                                  child: Container(
+                                    width: double.maxFinite,
+                                    height: 48.0,
+                                    alignment: Alignment.center,
+                                    color: Color(0xFFF95F62),
+                                    child: Text(
+                                      'SET REMINDER',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 17.0,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
