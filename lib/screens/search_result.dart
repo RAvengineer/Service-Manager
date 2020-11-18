@@ -20,14 +20,25 @@ class _SearchResultState extends State<SearchResult> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kScaffoldBackground,
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.white70,
-        child: Icon(
-          Icons.search,
-          color: Color(0xFF8080C5),
+      floatingActionButton: Container(
+        height: 93.0,
+        width: 92.0,
+        padding: EdgeInsets.all(6.0),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          shape: BoxShape.circle,
         ),
-        elevation: 10.0,
-        onPressed: () {},
+        child: FloatingActionButton(
+          backgroundColor: Color(0x2B9D9C98),
+          elevation: 1.0,
+          child: Image.asset(
+            'assets/images/Raster_3.png',
+            color: Color(0xFF8080C5),
+            height: 50.0,
+            width: 50.0,
+          ),
+          onPressed: () {},
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: SafeArea(
