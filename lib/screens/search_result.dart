@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:service_manager/screens/get_location.dart';
 import 'package:service_manager/utilites/constants.dart';
 import 'package:service_manager/widgets/appbar_icon.dart';
 import 'package:service_manager/widgets/common_appbar.dart';
@@ -37,7 +38,9 @@ class _SearchResultState extends State<SearchResult> {
             height: 50.0,
             width: 50.0,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, GetLocation.id);
+          },
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
