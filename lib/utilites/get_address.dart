@@ -19,7 +19,8 @@ class GetAddress {
     if (!_serviceEnabled) {
       _serviceEnabled = await location.requestService();
     }
-    serviceEnabled = _serviceEnabled;
+    loc.PermissionStatus permissionStatus = await location.requestPermission();
+    serviceEnabled = (permissionStatus == loc.PermissionStatus.granted);
   }
 
   Future<void> getCurrentAddress() async {
