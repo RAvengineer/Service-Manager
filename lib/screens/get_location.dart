@@ -18,6 +18,7 @@ class _GetLocationState extends State<GetLocation> {
     return Scaffold(
       body: SafeArea(
         child: Container(
+          alignment: Alignment.center,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
