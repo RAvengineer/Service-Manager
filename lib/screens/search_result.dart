@@ -234,44 +234,67 @@ class _SearchResultState extends State<SearchResult> {
                           Row(
                             children: <Widget>[
                               Expanded(
-                                flex: 1,
-                                child: FlatButton(
+                                child: RawMaterialButton(
                                   onPressed: () => {},
                                   child: Container(
-                                    width: double.maxFinite,
                                     height: 48.0,
                                     alignment: Alignment.center,
                                     color: Color(0xFF8FB339),
-                                    child: Text(
-                                      'Add to Roaster',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 17.0,
-                                      ),
+                                    padding: EdgeInsets.all(6.0),
+                                    child: Row(
+                                      children: <Widget>[
+                                        Image.asset(
+                                          'assets/images/Raster_9.png',
+                                          height: 24.0,
+                                          width: 24.0,
+                                          color: Colors.white,
+                                        ),
+                                        Text(
+                                          'Add to Roaster',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 17.0,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
                               ),
+                              SizedBox(
+                                width: 4.0,
+                              ),
                               Expanded(
-                                flex: 1,
-                                child: FlatButton(
+                                child: RawMaterialButton(
                                   onPressed: () => {},
                                   child: Container(
-                                    width: double.maxFinite,
                                     height: 48.0,
                                     alignment: Alignment.center,
                                     color: Color(0xFFF95F62),
-                                    child: Text(
-                                      'SET REMINDER',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 17.0,
-                                      ),
+                                    padding: EdgeInsets.all(6.0),
+                                    child: Row(
+                                      children: <Widget>[
+                                        Image.asset(
+                                          'assets/images/Raster_10.png',
+                                          height: 24.0,
+                                          width: 24.0,
+                                        ),
+                                        Text(
+                                          'SET REMINDER',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 17.0,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
                               ),
                             ],
+                          ),
+                          SizedBox(
+                            height: 25.0,
                           ),
                         ],
                       ),
