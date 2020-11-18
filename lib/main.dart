@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:service_manager/screens/get_location.dart';
 import 'package:service_manager/screens/search_result.dart';
 
 void main() {
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
       home: SearchResult(),
       routes: {
         SearchResult.id: (context) => SearchResult(),
+        GetLocation.id: (context) => GetLocation(),
       },
     );
   }
