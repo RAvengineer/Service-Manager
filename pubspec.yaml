@@ -29,6 +29,8 @@ dependencies:
   location: ^3.0.0
   # Package for Address Retrieval
   geocoder: ^0.2.1
+  # Package to store data in shared prefs
+  shared_preferences: ^0.5.12+4
 
 dev_dependencies:
   flutter_test:
