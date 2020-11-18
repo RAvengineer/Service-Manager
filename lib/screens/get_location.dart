@@ -10,16 +10,16 @@ class GetLocation extends StatefulWidget {
 
 class _GetLocationState extends State<GetLocation> {
   GetAddress _getAddress = GetAddress();
-  String gpsCoordinates = '';
+  String gpsCoordinates = '', address = '';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          alignment: Alignment.center,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               MaterialButton(
                 color: Colors.lightGreenAccent,
@@ -27,14 +27,18 @@ class _GetLocationState extends State<GetLocation> {
                 onPressed: () async {
                   await _getAddress.checkLocationServices();
                   if (!_getAddress.serviceEnabled) Navigator.maybePop(context);
-                  await _getAddress.getCurrentLocation();
+                  await _getAddress.getCurrentAddress();
                   setState(() {
                     gpsCoordinates =
-                        'GPS Coordinates: ${_getAddress.longitude} N, ${_getAddress.latitude} E ';
+                        'GPS Coordinates: ${_getAddress.latitude} N, ${_getAddress.longitude} E ';
+                    address = 'Address: ${_getAddress.currentAddress}';
                   });
                 },
               ),
-              Text('$gpsCoordinates\nAddress: '),
+              Text(
+                '$gpsCoordinates\n$address',
+                textAlign: TextAlign.center,
+              ),
             ],
           ),
         ),

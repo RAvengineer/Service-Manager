@@ -22,7 +22,7 @@ class GetAddress {
     serviceEnabled = _serviceEnabled;
   }
 
-  Future<void> getCurrentLocation() async {
+  Future<void> getCurrentAddress() async {
     try {
       _locationData = await location.getLocation();
       longitude = _locationData.longitude;
