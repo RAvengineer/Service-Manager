@@ -1,3 +1,4 @@
+import 'package:geocoder/geocoder.dart';
 import 'package:location/location.dart' as loc;
 
 class GetAddress {
@@ -5,6 +6,7 @@ class GetAddress {
   bool serviceEnabled;
   loc.Location location = loc.Location();
   loc.LocationData _locationData;
+  String currentAddress;
 
   GetAddress() {
     checkLocationServices();
@@ -26,6 +28,11 @@ class GetAddress {
       longitude = _locationData.longitude;
       latitude = _locationData.latitude;
       print('Location received!');
+      final coordinates = new Coordinates(latitude, longitude);
+      List<Address> addresses =
+          await Geocoder.local.findAddressesFromCoordinates(coordinates);
+      currentAddress = addresses.first.addressLine;
+      print('Address: $currentAddress');
     } catch (e) {
       print('Error in getCurrentLocation() of Location:\n$e');
     }
