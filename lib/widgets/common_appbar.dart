@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:service_manager/utilites/constants.dart';
 import 'package:service_manager/widgets/appbar_icon.dart';
 
 class CommonAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xFF011627),
-      height: 75.0,
+      color: kScaffoldBackground,
+      height: 70.0,
+      padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
