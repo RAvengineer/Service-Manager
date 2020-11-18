@@ -184,45 +184,51 @@ class _SearchResultState extends State<SearchResult> {
                               children: [
                                 TableRow(
                                   children: [
-                                    Text(
-                                      "TRAIN NO",
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
+                                    Center(
+                                      child: Text(
+                                        "TRAIN NO",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                       ),
                                     ),
-                                    Text(
-                                      "START",
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
+                                    Center(
+                                      child: Text(
+                                        "START",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                       ),
                                     ),
-                                    Text(
-                                      "CHANGE",
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
+                                    Center(
+                                      child: Text(
+                                        "CHANGE",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                       ),
                                     ),
                                   ],
                                 ),
                                 TableRow(
                                   children: [
-                                    Text("S 90001"),
-                                    Text("KYN\n13:56"),
-                                    Text("CSMT\n15:24"),
+                                    Center(child: Text("S 90001")),
+                                    Center(child: Text("KYN\n13:56")),
+                                    Center(child: Text("CSMT\n15:24")),
                                   ],
                                 ),
                                 TableRow(
                                   children: [
-                                    Text("F 90002"),
-                                    Text("CSMT\n13:41"),
-                                    Text("ASO\n19:23"),
+                                    Center(child: Text("F 90002")),
+                                    Center(child: Text("CSMT\n13:41")),
+                                    Center(child: Text("ASO\n19:23")),
                                   ],
                                 ),
                                 TableRow(
                                   children: [
-                                    Text("S 90001"),
-                                    Text("ASO\n19:43"),
-                                    Text("KYN\n20:20"),
+                                    Center(child: Text("S 90001")),
+                                    Center(child: Text("ASO\n19:43")),
+                                    Center(child: Text("KYN\n20:20")),
                                   ],
                                 ),
                               ],
