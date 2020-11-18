@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:service_manager/utilites/constants.dart';
+import 'package:service_manager/widgets/appbar_icon.dart';
 import 'package:service_manager/widgets/common_appbar.dart';
 import 'package:service_manager/widgets/train_details_container.dart';
 
@@ -19,6 +20,15 @@ class _SearchResultState extends State<SearchResult> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kScaffoldBackground,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.white70,
+        child: Icon(
+          Icons.search,
+          color: Color(0xFF8080C5),
+        ),
+        elevation: 10.0,
+        onPressed: () {},
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: SafeArea(
         child: Column(
@@ -256,7 +266,34 @@ class _SearchResultState extends State<SearchResult> {
                 ),
               ),
             ),
-            CommonAppBar(),
+            Container(
+              height: 69.0,
+              padding: EdgeInsets.symmetric(vertical: 20.0),
+              color: Color(0xFF9A1518),
+              child: Row(
+                children: <Widget>[
+                  AppBarIcon(
+                    filename: 'assets/images/Raster_4.png',
+                    color: Colors.white,
+                  ),
+                  AppBarIcon(
+                    filename: 'assets/images/Raster_6.png',
+                    color: Colors.white,
+                  ),
+                  SizedBox(
+                    width: 92.0,
+                  ),
+                  AppBarIcon(
+                    filename: 'assets/images/Raster_5.png',
+                    color: Colors.white,
+                  ),
+                  AppBarIcon(
+                    filename: 'assets/images/Raster_7.png',
+                    color: Colors.white,
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
